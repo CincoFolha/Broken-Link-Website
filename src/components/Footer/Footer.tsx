@@ -10,6 +10,7 @@ import { Link } from '../UI/Link/Link';
 import { Typography } from '../UI/Typography/Typography';
 import { footerStyles } from './styles';
 import { useFooterData } from './useFooterData';
+import { EXTERNAL_LINKS } from '@/constants/externalLinks.consts';
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -40,10 +41,11 @@ export default function Footer() {
             </Text>
             <Typography style={footerStyles.text(isDark)}>{t('footer.about')}</Typography>
             <Button
+              href={EXTERNAL_LINKS.GITHUB.REPO}
+              target="_blank"
               leftSection={
                 <IconStar style={{ marginRight: theme.spacing.lg }} size={footerStyles.iconSize} />
               }
-              variant='primary'
             >
               {t('footer.gitBtnTxt')}
             </Button>
