@@ -7,6 +7,7 @@ import { Divider } from '../UI/Divider/Divider';
 import { Link } from '../UI/Link/Link';
 import NavbarLinks from './NavbarLinks';
 import { desktopStyles as styles } from './styles';
+import { EXTERNAL_LINKS } from '@/constants/externalLinks.consts';
 
 export default function DesktopNav() {
   const { t } = useTranslation();
@@ -22,7 +23,7 @@ export default function DesktopNav() {
             <NavbarLinks variant='desktop' />
           </div>
           {/* TODO - add option for button hover effect */}
-          <Button style={styles.button}>
+          <Button href={EXTERNAL_LINKS.GITHUB.REPO} target="_blank" style={styles.button}>
             <IconBrandGithub style={styles.buttonIcon} size={18} />
             {t('navbar.github')}
           </Button>
