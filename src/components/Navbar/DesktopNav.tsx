@@ -2,7 +2,7 @@ import { IconBrandGithub } from '@tabler/icons-react';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
 import logo from '../../../public/logo.svg';
-import { Button } from '../UI/Button/Button';
+import { Button, LinkTarget } from '../UI/Button/Button';
 import { Divider } from '../UI/Divider/Divider';
 import { Link } from '../UI/Link/Link';
 import NavbarLinks from './NavbarLinks';
@@ -23,7 +23,7 @@ export default function DesktopNav() {
             <NavbarLinks variant='desktop' />
           </div>
           {/* TODO - add option for button hover effect */}
-          <Button href={EXTERNAL_LINKS.GITHUB.REPO} target="_blank" style={styles.button}>
+          <Button href={EXTERNAL_LINKS.GITHUB.REPO} target={LinkTarget.Blank} style={styles.button}>
             <IconBrandGithub style={styles.buttonIcon} size={18} />
             {t('navbar.github')}
           </Button>

@@ -2,7 +2,12 @@ import React, { CSSProperties } from 'react';
 import { ButtonProps, Button as MantineButton, MantineStyleProp } from '@mantine/core';
 import { buttonVariants } from './styles';
 
-type LinkTarget = '_blank' | '_self' | '_parent' | '_top';
+export enum LinkTarget {
+  Blank = '_blank',
+  Self = '_self',
+  Parent = '_parent',
+  Top = '_top',
+}
 
 interface SharedButtonProps extends Omit<ButtonProps, 'style'> {
   style?: CSSProperties;
@@ -18,7 +23,7 @@ export const Button = ({
   variant = 'primary',
   href,
   target,
-  rel = 'noopener noreferrer',
+  rel,
   ...props 
 }: SharedButtonProps) => {
   const variantStyle = buttonVariants[variant];
@@ -33,7 +38,7 @@ export const Button = ({
     component: 'a' as const, 
     href, 
     target, 
-    rel: target === '_blank' ? rel || 'noopener noreferrer' : rel,
+    rel: target === LinkTarget.Blank ? rel || 'noopener noreferrer' : rel,
     } : {};
 
   return (
