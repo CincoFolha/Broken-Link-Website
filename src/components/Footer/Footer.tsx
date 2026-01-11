@@ -4,7 +4,7 @@ import { Box, Container, SimpleGrid, Text } from '@mantine/core';
 import { useViewportSize } from '@mantine/hooks';
 import { theme } from '@/theme';
 import { useIsDark } from '../Hooks/useIsDark';
-import { Button, LinkTarget } from '../UI/Button/Button';
+import { LinkButton, LinkTarget } from '../UI/Button/LinkButton';
 import { Divider } from '../UI/Divider/Divider';
 import { Link } from '../UI/Link/Link';
 import { Typography } from '../UI/Typography/Typography';
@@ -40,7 +40,7 @@ export default function Footer() {
               {t('footer.header')}
             </Text>
             <Typography style={footerStyles.text(isDark)}>{t('footer.about')}</Typography>
-            <Button
+            <LinkButton
               href={EXTERNAL_LINKS.GITHUB.REPO}
               target={LinkTarget.Blank}
               leftSection={
@@ -48,7 +48,7 @@ export default function Footer() {
               }
             >
               {t('footer.gitBtnTxt')}
-            </Button>
+            </LinkButton>
           </Box>
 
           <Box>
