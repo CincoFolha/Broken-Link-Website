@@ -26,7 +26,7 @@ export const LinkButton = ({
   ...props 
 }: LinkButtonProps) => {
   const variantStyle = buttonVariants[variant];
-  const margedStyl: MantineStyleProp = {
+  const mergedStyle: MantineStyleProp = {
     ...variantStyle,
     ...style
   } as MantineStyleProp;
